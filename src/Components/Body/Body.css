@@ -1,0 +1,5 @@
+.Body {
+	display: flex;
+	flex-direction: column; /*Try to make row-reverse (issue with height) */
+	flex-wrap: wrap;
+}
