@@ -1,11 +1,11 @@
 import React from "react"
 import "./Main.css"
 
-export default function Main() {
+export default function Main(props) {
 	return (
-		<div className="Main">
-			I am your content section
-		</div>
+		<h1 className="Main">
+			{props.content}
+		</h1>
 	)
 }
 

@@ -1,10 +1,11 @@
 import React, {useState} from "react"
 import Navbar from "../Navbar/Navbar.js"
-//import Main from "../Main/Main.js"
+import Main from "../Main/Main.js"
 import "./Body.css"
+import DataVisuals from "../DataVisuals.js"
 
 export default function Body() {
-	const [display, setDisplay] = useState("0")
+	const [display, setDisplay] = useState("1")
 	const tabs = [
 		"Resumé",
 		"Data Visuals",
@@ -20,10 +21,10 @@ export default function Body() {
     <div className="Body">
       <Navbar tabs={tabs} activeTab={display} changeTab={changeDisplay} />
 
-			<h1 style={{"display": display==="0"? "block":"none"}}>Resume</h1>
-			<h1 style={{"display": display==="1"? "block":"none"}}>Data Visuals</h1>
-			<h1 style={{"display": display==="2"? "block":"none"}}>Tic Tac Toe</h1>
-			<h1 style={{"display": display==="3"? "block":"none"}}>Documentation</h1>
+			{display === "0"? <Main content={tabs[0]} /> : null}
+			{display === "1"? <DataVisuals content={tabs[1]} /> : null}
+			{display === "2"? <Main content={tabs[2]} /> : null}
+			{display === "3"? <Main content={tabs[3]} /> : null}
     </div>
   )
 }

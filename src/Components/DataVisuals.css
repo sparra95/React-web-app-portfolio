@@ -1,0 +1,37 @@
+.DataVisuals-container {
+	padding: 20px;
+	max-width: 100%;
+}
+
+.charts-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.doughnutChart-container, .barChart-container {
+	padding: 0 5px;
+	width: 45%;
+	min-width: 320px;
+	height: 45vh;
+}
+
+select.selectMonth {
+	display: block;
+	height: 40px;
+  width: 200px;
+  font-size: 16px;
+  text-indent: 5px;
+}
+
+@media only screen and (max-width: 425px) {
+
+	select.selectMonth {
+    text-indent: 60px;
+    background-color: #FFFFFF;
+    margin: auto;
+    border: gray solid 1px;
+    border-radius: 5px;
+	}
+
+}

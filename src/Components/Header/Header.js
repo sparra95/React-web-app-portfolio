@@ -7,9 +7,9 @@ export default function Header() {
 	const [text2, setText2] = useState("")
 	const [text3, setText3] = useState("")
 	const array = [
-		"3 years professional experience",
-		"Good Communication Skills",
-		"Bilingual (Conversational Spanish)",
+		"7 years experience",
+		"Good Communicator",
+		"Bilingual",
 		"Adaptative",
 		"Creative",
 		"Disciplined"

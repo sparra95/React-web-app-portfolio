@@ -1,10 +1,12 @@
+
 header {
 	margin: 0;
-	padding: 30px 100px;
+	padding: 20px 100px;
 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	align-self: stretch;
 	min-height: 80px;
 
 	background-color: #04bcf5;
@@ -15,7 +17,6 @@ header {
 header div#titleContainer {
 	margin: 0;
 	padding: 10px 20px;
-	border-right: whitesmoke solid 5px;
 
 	display: flex;
 	flex-direction: column;
@@ -37,6 +38,7 @@ header div#contactContainer {
 	padding-bottom: 5px;
 	padding-left: 20px;
 	padding-right: 0;
+	border-left: whitesmoke solid 5px;
 
 	display: flex;
 	flex-direction: column;
@@ -79,6 +81,29 @@ header div#contactContainer p {
 	75% 	{ left:0px; top:0px; opacity: 1; }
 	90% 	{ left:0px; top:0px; opacity: 1; }
 	100% 	{ left:0px; top:0px; opacity: 0; }
+}
+
+
+/*******************************/
+/********   MOBILE   ***********/
+/*******************************/
+
+@media only screen and (max-width: 425px) {
+
+	header {
+		margin: 0;
+		padding: 10px 0px;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	#titleContainer {
+		text-align: center;
+	}
+
+	header div#contactContainer {
+		display: none;
+	}
 }
 
 
