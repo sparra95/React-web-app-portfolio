@@ -1,9 +1,9 @@
 import React, {useState} from "react"
 import {Bar, Doughnut} from "react-chartjs-2"
-import personalFinancesData from "../personalfinancialdata.js"
-import "./DataVisuals.css"
+import pFData from "./MonthlyFinancesData.js"
+import "./MonthlyFinances.css"
 
-export default function DataVisuals() {
+export default function MonthlyFinances() {
 
 	function compileAccountsMonthly(data) {
 		let monthlyAccounts = []
@@ -54,11 +54,6 @@ export default function DataVisuals() {
 			}
 		}
 
-		/* REMOVE AUG 2018 and OCT 2019 */
-		/* this will all data in year-long period */
-		monthlyAccounts.shift()
-		monthlyAccounts.pop()
-
 		return (monthlyAccounts)
 	}
 
@@ -73,7 +68,7 @@ export default function DataVisuals() {
 	}
 
 
-	const monthlyAccounts = compileAccountsMonthly(personalFinancesData)
+	const monthlyAccounts = compileAccountsMonthly(pFData)
 	const lookupTableMonthly = createLookTable(monthlyAccounts)
 
 	const expenseCategories = ["FOOD","GAS","RENT || UTILS","MAINTENANCE","TREAT || LUXURY","TAKEOUT","STUDENT LOANS"]
@@ -86,7 +81,6 @@ export default function DataVisuals() {
 		const indexOfMonth = lookupTableMonthly[event.target.value]
 		setCurrentMonth(event.target.value)
 		setMonthCategories( expenseCategories.map(cat => monthlyAccounts[indexOfMonth][cat] ))
-		console.log( monthlyAccounts[indexOfMonth] )
 	}
 
 
@@ -110,17 +104,17 @@ export default function DataVisuals() {
 
       	],
       	hoverBackgroundColor: [
-      		'#501800',
+      		'#501000',
       		'#4B5000',
       		'#175000',
-      		'#003350',
-      		'#35014F',
-					'#501800',
+      		'#003050',
+      		'#35004F',
+					'#501000',
       		'#4B5000',
       		'#175000',
-      		'#003350',
-      		'#35014F',
-					'#501800'
+      		'#003050',
+      		'#35004F',
+					'#501000'
       	],
       	data: monthCategories
     	}
@@ -148,48 +142,8 @@ export default function DataVisuals() {
   	]
 	}
 
-
-
-	const months = monthlyAccounts.map((m) => {return m["Month"]} )
-	const monthlyRevenues = monthlyAccounts.map((m) => {return m["Revenue"]} )
-	const monthlyCosts = monthlyAccounts.map((m) => {return -1*m["Costs"]} )
-
-	const barChartAnnually = {
-  	labels: months,
-  	datasets: [
-    	{
-      	label: "Revenue",
-      	backgroundColor: "green",
-      	borderColor: "rgba(0,0,0,0)",
-      	borderWidth: 1,
-      	data: monthlyRevenues
-    	},
-			{
-      	label: "Costs",
-      	backgroundColor: "firebrick",
-      	borderColor: "rgba(0,0,0,0)",
-      	borderWidth: 1,
-      	data: monthlyCosts
-    	}
-  	]
-	}
-
-
-	/*
-		Start styling, then MOVE ON. (Take Scrimba TicTacToe course)
-	*/
-
 	return (
-		<div className="DataVisuals-container">
-			<h1>Data Visuals</h1>
-			<p>
-				Thinking about what data I could visualize, I searched the internet for datasets and APIs I could
-				use but nothing really stood out. Until it dawned on me that I could use my own data! A couple years
-				ago I decided to keep track of my expenses and I used airtable.com as my tool of choice. I kept track
-				of all my paychecks and expenses and categorized them by type (maintanance, food (takeout?), luxury, etc). I took
-				a year's worth of data as my sample data set and here are some conclusions I was able to make from that data
-			</p>
-			<br />
+		<div>
 			<select
        value={currentMonth}
        onChange={handleChangeMonth}
@@ -198,6 +152,7 @@ export default function DataVisuals() {
       >
 				{selectOptions}
       </select>
+
 			<br />
 
 			<div className="charts-container">
@@ -219,7 +174,6 @@ export default function DataVisuals() {
 				}}
 			/>
 			</div>
-
 			<div className="barChart-container">
 				<Bar
           data={barChartMonthly}
@@ -245,25 +199,6 @@ export default function DataVisuals() {
           }}
         />
 			</div>
-			</div>
-
-			<div style={{"width":"80%","display":"none"}}>
-				<Bar
-          data={barChartAnnually}
-          options={{
-						responseive: true,
-						maintainAspectRatio: true,
-            title:{
-              display:true,
-              text:'Total revenue and Costs per month',
-              fontSize:20
-            },
-            legend:{
-              display:true,
-              position:'bottom'
-            }
-          }}
-        />
 			</div>
 			<br />
 		</div>

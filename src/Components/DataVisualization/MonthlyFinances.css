@@ -1,8 +1,3 @@
-.DataVisuals-container {
-	padding: 20px;
-	max-width: 100%;
-}
-
 .charts-container {
 	display: flex;
 	flex-direction: row;
@@ -10,7 +5,7 @@
 }
 
 .doughnutChart-container, .barChart-container {
-	padding: 0 5px;
+	margin-right: 10px;
 	width: 45%;
 	min-width: 320px;
 	height: 45vh;
@@ -22,16 +17,20 @@ select.selectMonth {
   width: 200px;
   font-size: 16px;
   text-indent: 5px;
+	background-color: #FFFFFF;
+  border: black solid 1px;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 425px) {
 
 	select.selectMonth {
     text-indent: 60px;
-    background-color: #FFFFFF;
     margin: auto;
-    border: gray solid 1px;
-    border-radius: 5px;
+	}
+
+	.charts-container {
+		justify-content: center;
 	}
 
 }

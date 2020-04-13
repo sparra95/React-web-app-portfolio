@@ -1,5 +1,11 @@
 .Body {
 	display: flex;
-	flex-direction: column; /*Try to make row-reverse (issue with height) */
+	flex-direction: column;
 	flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 425px) {
+	.Body {
+		text-align: center;
+	}
 }
