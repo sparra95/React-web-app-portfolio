@@ -1,11 +1,17 @@
 .Body {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+	text-align: center;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 426px) {
 	.Body {
-		text-align: center;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		text-align: left;
+	}
+	
+	.Body > div {
+		width: 100%;
+		padding: 40px 0;
 	}
 }

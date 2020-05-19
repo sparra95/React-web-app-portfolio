@@ -1,0 +1,207 @@
+/**********************************************/
+/********** Mobile (Default) Styling **********/
+/**********************************************/
+
+.template-container {
+	margin: 40px auto;
+	max-width: 850px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	
+	-webkit-box-shadow: 10px 10px 30px -20px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 30px -20px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 30px -20px rgba(0,0,0,0.75);
+}
+
+.section-1 {
+	background-color: #1f202e; /* light blue-cyan: #04bcf5;*/
+	color: white;
+	padding: 30px;
+	min-width: 250px;
+	max-width: 350px;
+}
+
+.section-2 {
+	background-color: white;
+	color: black;
+	padding: 30px;
+	min-width: 250px;
+}
+
+.section-1 h1 { font-size: 20px;  }
+
+.section-1 hr { background-color: white; }
+
+.section-2 h1 { margin: 10px 0; }
+
+.section-2 hr { background-color: black; }
+
+
+/**********************************************/
+/*********** Header Component ***********/
+/**********************************************/
+
+.header-component {
+	display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.header-component h1 {
+	text-transform: uppercase;
+	white-space: nowrap;
+	transform: scale(1.0, 1.2);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.header-component hr {
+	width: 100%;
+	height: 4px;
+	border: none;
+	margin: 0;
+	text-align: left;
+    margin-left: 20px;
+}
+
+/**********************************************/
+/*********** List Component ***********/
+/**********************************************/
+
+.list-component { }
+
+.list-component ul {
+	margin-top: 0;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
+.list-component li {
+	margin-bottom: 5px;
+}
+
+/**********************************************/
+/*********** Counter Component ***********/
+/**********************************************/
+
+.counter-component {
+	margin: 10px 0;
+}
+
+.counter-component h1 {
+	display: inline-block;
+	font-size: 120px;
+	line-height: 6rem;
+    margin: 0;
+	color: #4c64d3;
+}
+
+.counter-component p {
+	display: inline-block;
+}
+
+/**********************************************/
+/*********** BarGraph Component ***********/
+/**********************************************/
+
+.bargraph-component {
+	margin: 20px 0;
+}
+
+/**********************************************/
+/*********** Grid Component 2 ***********/
+/**********************************************/
+
+.grid-component {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: auto;
+	padding: 10px 0;
+}
+
+.grid-component span.small {
+	height: 24px;
+	width: 24px;
+	margin: 0 5px 5px 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	top: 0;
+	text-align: center;
+}
+
+.grid-component span.small h2 {
+	font-size: 100%;
+	line-height: 24px;
+	width: 30px;
+}
+	
+.grid-component p.small {
+	font-size: 0;
+	position: relative;
+	top: -20px;
+	opacity:  0;
+}
+
+@media only screen and (min-width: 426px) {
+	.grid-component { cursor: pointer; }
+	
+	.grid-component span, .grid-component p, .grid-component h2 { transition: linear 200ms; }
+	
+	.grid-component span.small, .grid-component p.big { transition-delay: 200ms; }
+	
+	.grid-component span.big {
+		height: 55px;
+		width: 55px;
+		max-width: 64px;
+		margin-bottom: 5px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	
+	.grid-component span.big h2 {
+		line-height: 30px;
+	}
+
+	.grid-component p.big {
+		margin: 0;
+		font-size: 10px;
+		text-align: center;
+		position: relative;
+		top: 0;
+		opacity:  1;
+	}
+	
+}
+
+/**********************************************/
+/************ Section Component **********/
+/**********************************************/
+
+.section-component { margin: 10px 0 30px; }
+
+.section-component h2 { margin: 0; }
+
+.section-component p { margin: 0; }
+
+.section-component p span { color: #333333; }
+
+
+/**********************************************/
+/*********** Desktop/Tablet Styling ***********/
+/**********************************************/
+
+@media only screen and (min-width: 426px) {
+	.template-container {
+		flex-direction: row;
+	}
+	
+}

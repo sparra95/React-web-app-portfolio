@@ -11,11 +11,11 @@ export default function Navbar(props) {
 						className={activeClass}
 						onClick={() => { props.changeTab(indexString) }}
 					 >
-						{ name }
+						{name}
 					 </button>
 	})
 
-	return ( <nav>{ tabElements }</nav> )
+	return ( <nav>{tabElements}</nav> )
 }
 
 

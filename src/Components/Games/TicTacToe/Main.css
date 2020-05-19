@@ -45,17 +45,27 @@
 	margin-top: 20px;
   height: 40px;
   width: 150px;
-  border: solid 2px black;
+  /*border: solid 2px black;*/
   border-radius: 5px;
-  color: black;
+  /*color: black;*/
   font-size: 16px;
-	transition: ease-in-out 50ms;
+	/*transition: ease-in-out 50ms;*/
+	
+	/* changes */
+	border: solid 2px #04bcf5;
+	background-color: #04bcf5;
+	color: white;
+	transition: ease-in-out 300ms;
 }
 
 .reset-btn:hover {
-	-webkit-box-shadow: 2px 2px 10px -1px rgba(0,0,0,0.65);
+	/*-webkit-box-shadow: 2px 2px 10px -1px rgba(0,0,0,0.65);
 	-moz-box-shadow: 2px 2px 10px -1px rgba(0,0,0,0.65);
-	box-shadow: 2px 2px 10px -1px rgba(0,0,0,0.65);
+	box-shadow: 2px 2px 10px -1px rgba(0,0,0,0.65);*/
+	
+	/* changes */
+	background-color: white;
+	color: #04bcf5
 }
 
 .reset-btn-game-over {
